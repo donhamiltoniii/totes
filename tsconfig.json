@@ -1,8 +1,15 @@
 {
   "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "outDir": "./dist",
-    "rootDir": "./"
+    "rootDir": "./",
+    "baseUrl": ".", // project root
+    "paths": {
+      "#*": ["src/*"] // matches the import‑map
+    }
   },
   "include": ["**/*.ts"],
   "exclude": ["dist"]
